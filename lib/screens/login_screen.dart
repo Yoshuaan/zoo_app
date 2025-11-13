@@ -1,4 +1,3 @@
-// lib/screens/login_screen.dart
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
         await HiveService.saveToSession('email', 'Tidak tersedia');
       }
 
-      // Debug: cek session
+      // Debug cek session
       print('Login berhasil untuk $username');
       print('Session username: ${HiveService.getSessionValue('username')}');
       print('Session email: ${HiveService.getSessionValue('email')}');
@@ -83,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // ==== HEADER GAMBAR ====
+            //  HEADER GAMBAR
             ClipPath(
               clipper: _CurvedClipper(),
               child: Container(
@@ -113,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
 
-            // ==== FORM LOGIN ====
+            //  FORM LOGIN
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
@@ -207,7 +206,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  /// 🔧 Widget untuk TextField konsisten
+  ///  Widget untuk TextField konsisten
   Widget _buildTextField({
     required TextEditingController controller,
     required String label,
@@ -238,7 +237,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
-/// ==== CLIPPER UNTUK POTONGAN ELEGAN GAMBAR ====
+/// clipper untuk potongan gambar CLIPPER UNTUK POTONGAN ELEGAN GAMBAR
 class _CurvedClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {

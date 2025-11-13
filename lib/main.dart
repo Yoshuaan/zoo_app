@@ -10,11 +10,9 @@ Future<void> main() async {
   //  Inisialisasi Hive
   await HiveService.initHive();
 
-  //  Inisialisasi Notifikasi
   await NotificationService.initNotifications();
 
-  //  Jadwalkan notifikasi harian (misalnya jam 18:35 WIB)
-  await NotificationService.scheduleDailyNotification(hour: 18, minute: 35);
+  await NotificationService.scheduleDailyNotification(hour: 13, minute: 31);
 
   //  Cek status login
   bool isLoggedIn = HiveService.isLoggedIn();

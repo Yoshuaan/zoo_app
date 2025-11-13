@@ -8,6 +8,7 @@ import 'search_screen.dart';
 import 'suggestion_screen.dart';
 import 'profile_screen.dart';
 import 'login_screen.dart';
+import 'ai_screen.dart'; // ✅ Tambahan halaman AI Chat
 import '../widgets/bottom_navbar.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,11 +21,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
+  // ✅ Tambah halaman AiScreen di daftar _pages
   final List<Widget> _pages = const [
-    HomeContent(), // Beranda
+    HomeContent(),
     MoreScreen(),
     SearchScreen(),
     SuggestionScreen(),
+    AiScreen(),
     ProfileScreen(),
   ];
 
@@ -45,20 +48,20 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // ✅ Judul berdasarkan tab aktif
+    final List<String> titles = [
+      'Beranda',
+      'Lainnya',
+      'Cari Hewan',
+      'Saran',
+      'Profil',
+      'AI Chat', // ✅ Tambahan
+    ];
+
     return Scaffold(
       backgroundColor: const Color(0xFFE0D9D9),
       appBar: AppBar(
-        title: Text(
-          _selectedIndex == 0
-              ? 'Beranda'
-              : _selectedIndex == 1
-              ? 'Lainnya'
-              : _selectedIndex == 2
-              ? 'Cari Hewan'
-              : _selectedIndex == 3
-              ? 'Saran'
-              : 'Profil',
-        ),
+        title: Text(titles[_selectedIndex]),
         backgroundColor: const Color(0xFF432323),
         foregroundColor: Colors.white,
         actions: [
@@ -77,23 +80,19 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// ==============================
-// Halaman konten utama (Beranda)
-// ==============================
+// 🟢 Halaman Beranda
 class HomeContent extends StatelessWidget {
   const HomeContent({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Gambar bagian atas
     final List<String> topImages = [
-      "https://images.unsplash.com/photo-1595363530143-b913b4ea30dd?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=600",
-      "https://images.unsplash.com/photo-1616869736815-3362745ab32d?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=600",
-      "https://images.unsplash.com/photo-1717507717678-fe8ec2485c02?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=600",
-      "https://images.unsplash.com/photo-1619989172648-7040c767e73a?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=600",
+      "https://images.unsplash.com/photo-1595363530143-b913b4ea30dd?auto=format&fit=crop&q=60&w=600",
+      "https://images.unsplash.com/photo-1616869736815-3362745ab32d?auto=format&fit=crop&q=60&w=600",
+      "https://images.unsplash.com/photo-1717507717678-fe8ec2485c02?auto=format&fit=crop&q=60&w=600",
+      "https://images.unsplash.com/photo-1619989172648-7040c767e73a?auto=format&fit=crop&q=60&w=600",
     ];
 
-    // Lokasi kebun binatang
     final List<Map<String, dynamic>> zooLocations = [
       {
         "name": "Gembira Loka Zoo (WIB)",
@@ -131,9 +130,7 @@ class HomeContent extends StatelessWidget {
           children: [
             const SizedBox(height: 16),
 
-            // =========================
-            // Hero Image
-            // =========================
+            // 🐯 Hero Image
             SizedBox(
               height: 220,
               child: ListView.separated(
@@ -156,9 +153,7 @@ class HomeContent extends StatelessWidget {
 
             const SizedBox(height: 30),
 
-            // =========================
-            // Discover Section
-            // =========================
+            // 🌿 Discover Section
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
@@ -189,9 +184,7 @@ class HomeContent extends StatelessWidget {
 
             const SizedBox(height: 40),
 
-            // =========================
-            // Our Work Section
-            // =========================
+            // 🦓 Our Work Section
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Card(
@@ -239,9 +232,7 @@ class HomeContent extends StatelessWidget {
 
             const SizedBox(height: 40),
 
-            // =========================
-            // Location Section
-            // =========================
+            // 📍 Location Section
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Align(

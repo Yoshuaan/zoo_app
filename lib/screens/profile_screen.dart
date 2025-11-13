@@ -23,7 +23,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     _loadProfileImageForUser();
   }
 
-  /// Ambil foto berdasarkan username aktif
   Future<void> _loadProfileImageForUser() async {
     final profileData = HiveService.getProfile(username);
     final imagePath = profileData?['imagePath'];
@@ -34,7 +33,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     }
   }
 
-  /// Pilih gambar dan simpan ke Hive
   Future<void> _pickImage() async {
     final picker = ImagePicker();
     final pickedFile = await picker.pickImage(
@@ -56,7 +54,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     await _loadProfileImageForUser();
   }
 
-  /// Hapus foto profil user
   Future<void> _removeProfileImage() async {
     final profileData = HiveService.getProfile(username);
     final imagePath = profileData?['imagePath'];
@@ -70,7 +67,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     setState(() => _profileImage = null);
   }
 
-  /// Logout
   Future<void> _logout(BuildContext context) async {
     await HiveService.logout();
     if (!mounted) return;

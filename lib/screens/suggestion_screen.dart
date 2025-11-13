@@ -59,8 +59,8 @@ class SuggestionScreen extends StatelessWidget {
                         SizedBox(height: 20),
                         Text(
                           "Sebagai pengembang aplikasi ini, saya ingin menyampaikan rasa terima kasih "
-                          "kepada dosen dan rekan-rekan yang telah memberikan kesempatan untuk belajar "
-                          "dan mengembangkan aplikasi berbasis Flutter.",
+                          "kepada bapak bagus yang sudah memberikan saya kesempatan untuk belajar secara mandiri "
+                          "dalam mengembangkan aplikasi anti tidur ini.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 16,
@@ -71,21 +71,9 @@ class SuggestionScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 16),
                         Text(
-                          "Melalui proyek aplikasi kebun binatang ini, saya belajar banyak tentang cara "
-                          "mengintegrasikan API, menyimpan data lokal menggunakan Hive, serta menerapkan sistem login "
-                          "dengan enkripsi sederhana menggunakan SHA256.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 16,
-                            height: 1.6,
-                            color: Color(0xFF432323),
-                            fontFamily: 'Nunito',
-                          ),
-                        ),
-                        SizedBox(height: 16),
-                        Text(
-                          "Harapan saya, aplikasi ini dapat menjadi contoh sederhana bagaimana teknologi dapat digunakan "
-                          "untuk memberikan edukasi tentang satwa dan konservasi alam kepada masyarakat luas. ",
+                          "Pesan saya kalau boleh saya berharap pak bagus bisa lebih sering live coding di depan mahasiswa, "
+                          "biar kami bisa lihat secara langsung implementasi sebuah teori itu bagaimana penerapanya "
+                          "sekalian biar kami bisa cerita ke teman teman kami diluar bahwa dosen mobile kami itu ngodingnya spek dewa,heheh",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 16,

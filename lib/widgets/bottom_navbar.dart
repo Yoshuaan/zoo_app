@@ -27,6 +27,10 @@ class BottomNavbar extends StatelessWidget {
           icon: Icon(Icons.chat_bubble_outline),
           label: 'Saran',
         ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.smart_toy_outlined),
+          label: 'AI',
+        ),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profil'),
       ],
     );
